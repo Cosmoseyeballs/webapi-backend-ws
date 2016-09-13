@@ -212,6 +212,7 @@
     <Compile Include="Controllers\NotFoundHandler.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\VersionCheckFilter.cs" />
+    <Compile Include="Controllers\VersionCheckHandler.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

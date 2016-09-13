@@ -19,7 +19,7 @@ namespace WBW.Controllers
             IEnumerable<string> values;
             if (request.Content.Headers.TryGetValues("X-Version", out values) && values.First() != "42")
             {
-                return Task.FromResult(new HttpResponseMessage( (HttpStatusCode)418));
+                return Task.FromResult(new HttpResponseMessage((HttpStatusCode)418));
             }
 
             var ret = base.SendAsync(request, cancellationToken);
