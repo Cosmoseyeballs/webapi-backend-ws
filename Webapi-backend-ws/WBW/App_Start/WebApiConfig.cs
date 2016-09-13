@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.ExceptionHandling;
+using WBW.Controllers;
 
 namespace WBW
 {
@@ -13,6 +15,9 @@ namespace WBW
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+            config.Services.Replace(typeof(IExceptionHandler), new NotFoundHandler());
+            config.Filters.Add(new VersionCheckFilter());
+            config.MessageHandlers.Add(new VersionCheckHandler());
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
